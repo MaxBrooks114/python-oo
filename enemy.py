@@ -1,4 +1,4 @@
-class Enemy(object):
+class Enemy:
 
     def __init__(self, name="Enemy", hit_points=0, lives=1):
         self.name = name
@@ -15,3 +15,13 @@ class Enemy(object):
 
     def __str__(self):
         return "Name: {0.name}, Lives: {0.lives}, Hit points: {0.hit_points}".format(self)
+
+
+class Troll(Enemy):
+
+    def __init__(self, name):
+        super().__init__(name=name, lives=1, hit_points=23)
+
+
+    def grunt(self):
+        print("Me {0.name}, me stomp you".format(self))

@@ -1,17 +1,13 @@
-from player import Player
+from enemy import Enemy, Troll
 
-tim = Player("Tim")
+ugly_troll = Troll("Pug")
+print("Ugly troll -{}".format(ugly_troll))
 
-from enemy import Enemy
 
-random_monster = Enemy("Basic enemy", 12, 1)
-print(random_monster)
+another_troll = Troll("Ug")
+print("Another troll -{}".format(another_troll))
 
-random_monster.take_damage(4)
-print(random_monster)
-random_monster.take_damage(8)
-print(random_monster)
-random_monster.take_damage(9)
-print(random_monster)
-
+brother = Troll("Ugr")
+print(brother)
+ugly_troll.grunt()
 
