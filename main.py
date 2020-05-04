@@ -2,21 +2,16 @@ from player import Player
 
 tim = Player("Tim")
 
-print(tim.name)
-print(tim.lives)
-tim.lives -= 1
-print(tim.lives)
-tim.lives -= 1
-print(tim.lives)
-tim.lives -= 1
-print(tim.lives)
-tim.lives -= 1
-print(tim.lives)
-print(tim)
+from enemy import Enemy
 
-tim._lives = 9
-print(tim)
-tim.level = 2
-print(tim)
-tim.level += 7
-print(tim)
+random_monster = Enemy("Basic enemy", 12, 1)
+print(random_monster)
+
+random_monster.take_damage(4)
+print(random_monster)
+random_monster.take_damage(8)
+print(random_monster)
+random_monster.take_damage(9)
+print(random_monster)
+
+
