@@ -50,7 +50,7 @@ class Artist:
 
     def add_song(self, name, year, title):
         """ Add a new song to the collection of albums"""
-        """ This method willl add the song to an album in the collection.
+        """ This method will add the song to an album in the collection.
         A new album will be created if it does not already exit
         
         Args:
