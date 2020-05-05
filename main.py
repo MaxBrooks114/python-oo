@@ -1,26 +1,12 @@
-from enemy import Enemy, Troll, Vampire
+a= 3
+b= "tim"
+c = 1,2,3
 
-ugly_troll = Troll("Pug")
-print("Ugly troll -{}".format(ugly_troll))
-
-
-another_troll = Troll("Ug")
-print("Another troll -{}".format(another_troll))
-
-brother = Troll("Ugr")
-print(brother)
-ugly_troll.grunt()
-
-brother.take_damage(4)
-print(brother)
-
-dracula = Vampire("Dracula")
-
-dracula.take_damage(3)
-
-print(dracula)
+print(a)
+print(b)
+print(c)
 
 
-while dracula.alive:
-    dracula.take_damage(3)
+
+
 

@@ -71,7 +71,7 @@ class Artist:
 def find_object(field, object_list):
     """ Check object list to see if object exists and return it if so  """
     for item in object_list:
-        if item.name == field:
+        if item._name == field:
             return item
     return None
 
