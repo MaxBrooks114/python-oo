@@ -41,11 +41,26 @@ class Penguin(object):
 
     def quack(self):
         print("quack")
-#
-# def test_duck(duck):
-#     duck.walk()
-#     duck.swim()
-#     duck.quack()
+
+
+class Flock:
+
+    def __init__(self):
+        self.flock = []
+
+    def add_duck(self, duck: Duck) -> None:
+        self.flock.append(duck)
+
+    def migrate(self):
+        for duck in self.flock:
+            try:
+                duck.fly()
+            except AttributeError as e:
+                print("one duck didn't make it")
+                problem = e
+
+        if problem:
+            raise problem
 
 if __name__ == "__main__":
     donald = Duck()
