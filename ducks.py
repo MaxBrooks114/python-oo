@@ -33,6 +33,9 @@ class Duck(object):
 
 class Penguin(object):
 
+    def __init__(self):
+        self.fly = self.aviate
+
     def walk(self):
         print("waddle but like a penguin")
 
@@ -42,6 +45,14 @@ class Penguin(object):
     def quack(self):
         print("quack")
 
+    def aviate(self):
+        print("I won the lottery and bought a lear jet")
+
+
+
+class Mallard(Duck):
+    pass
+
 
 class Flock:
 
@@ -49,12 +60,19 @@ class Flock:
         self.flock = []
 
     def add_duck(self, duck: Duck) -> None:
-        self.flock.append(duck)
+        fly_method = getattr(duck, 'fly', None)
+        # if isinstance(duck, Duck):
+        if callable(fly_method):
+            self.flock.append(duck)
+        else:
+            raise TypeError("Cannot add duck, it is a " + str(type(duck).__name__))
 
     def migrate(self):
+        problem = None
         for duck in self.flock:
             try:
                 duck.fly()
+                raise AttributeError("Testing exception handler in migrate") #TODO remove this before release
             except AttributeError as e:
                 print("one duck didn't make it")
                 problem = e
